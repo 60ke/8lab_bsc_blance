@@ -20,7 +20,7 @@ kill geth 进程,由于当前docker 在geth进程被kill后会自动重启
 此时返回结果不具备实际意义
 */
 func RestartDocker(name string) ExecResult {
-	sendMsg(fmt.Sprintf("docker:%s start", name))
+	sendMsg(fmt.Sprintf("docker:%s restart", name))
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 
@@ -34,14 +34,16 @@ func RestartDocker(name string) ExecResult {
 	if stderr.Bytes() != nil {
 		Logger.Sugar().Error(stderr.String())
 	}
+	var errStr = ""
 	if err != nil {
 		Logger.Sugar().Error(err.Error())
+		errStr = err.Error()
 	}
 
 	res := ExecResult{
 		stdout.String(),
 		stderr.String(),
-		err.Error(),
+		errStr,
 	}
 	return res
 }
