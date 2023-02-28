@@ -1,0 +1,7 @@
+ding-prefix = 'bsc节点'
+ding-url = 'https://oapi.dingtalk.com/robot/send?access_token='
+ding-token = '48679669f51e7aa89c4544b17bfc4c1e4a565b975d067cf3fa420b0ae0c255ef'
+log-level = 'info'
+log-name = 'bsc_balance.log'
+port = 8546
+token = '3D3781351A3EE9E4'
