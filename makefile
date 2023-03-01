@@ -6,20 +6,20 @@ GOLDFLAGS += -X main.Buildtime=$(BUILDTIME)
 GOFLAGS = -ldflags "$(GOLDFLAGS)"
 
 # run: build
-# 	./bsc-balance
+# 	./bscMonitor
 
 linux-amd64:
-	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o bsc-balance-linux-amd64 $(GOFLAGS) .
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o bscMonitor-linux-amd64 $(GOFLAGS) .
 linux-arm64:
-	CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -o bsc-balance-linux-arm64 $(GOFLAGS) .
+	CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -o bscMonitor-linux-arm64 $(GOFLAGS) .
 darwin-arm64:
-	CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -o bsc-balance-darwin-arm64 $(GOFLAGS) .
+	CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -o bscMonitor-darwin-arm64 $(GOFLAGS) .
 
 darwin-amd64:
-	CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -o bsc-balance-darwin-arm64 $(GOFLAGS) .
+	CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -o bscMonitor-darwin-arm64 $(GOFLAGS) .
 
 windows-amd64:
-	CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o bsc-balance-windows-arm64 $(GOFLAGS) .
+	CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o bscMonitor-windows-arm64 $(GOFLAGS) .
 
 
 
